@@ -1,0 +1,21 @@
+[project]
+name = "lstm"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Dranov E."}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "torch (>=2.7.0,<3.0.0)",
+    "pytorch-lightning (>=2.5.1.post0,<3.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "matplotlib (<3.8)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
