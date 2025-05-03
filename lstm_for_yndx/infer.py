@@ -23,7 +23,7 @@ def inference(data):
     plot_predictions(all_data, predicted_prices, sequence_length)
     print("Predicted prices for next", days_to_predict, "days:")
     for i, price in enumerate(predicted_prices, 1):
-        print(f"Day {i}: {price:.2f}")
+        print(f"Day1 {i}: {price:.2f}")
 
 
 if __name__ == "__main__":
