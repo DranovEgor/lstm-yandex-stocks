@@ -6,7 +6,7 @@ from torch.utils.data import Dataset
 
 
 def start_prepare():
-    data = pd.read_csv("YDEX.csv")
+    data = pd.read_csv("../YDEX.csv")
     data = data["Цена"]
     data = data.apply(lambda x: x[:-2])
     all_data = data.astype(float)
