@@ -1,1 +1,1 @@
-# LSTM for Yandex stocks
+# LSTM for Yandex stocks!
