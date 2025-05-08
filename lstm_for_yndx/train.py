@@ -31,8 +31,8 @@ def train_model(stock_data):
 
     trainer = pl.Trainer(max_epochs=epochs)
     trainer.fit(model, train_loader, val_loader)
-    torch.save(model, "model_full.pt")
-    torch.save(scaler, "scaler.pt")
+    torch.save(model, "../models/model_full.pt")
+    torch.save(scaler, "../models/scaler.pt")
 
     return model, scaler
 
