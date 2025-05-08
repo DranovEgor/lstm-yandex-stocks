@@ -1,8 +1,10 @@
+import hydra
 import pytorch_lightning as pl
 import torch
 from data import prepare_data, start_prepare
 from dvc.api import DVCFileSystem
 from model import StockLSTM
+from omegaconf import OmegaConf
 from torch.utils.data import DataLoader
 
 
@@ -11,10 +13,10 @@ def load_data():
     fs.get("../YDEX.csv", "../YDEX.csv")
 
 
-def train_model(stock_data):
-    sequence_length = 60
-    batch_size = 64
-    epochs = 30
+def train_model(stock_data, cfg):
+    sequence_length = cfg["sequence_length"]
+    batch_size = cfg["batch_size"]
+    epochs = cfg["epochs"]
 
     train_dataset, test_dataset, scaler = prepare_data(stock_data, sequence_length)
 
@@ -37,7 +39,13 @@ def train_model(stock_data):
     return model, scaler
 
 
-if __name__ == "__main__":
+@hydra.main(version_base=None, config_path="../configs", config_name="config")
+def main(cfg):
     load_data()
     all_data = start_prepare()
-    model, scaler = train_model(all_data)
+    params = OmegaConf.to_container(cfg["params"])
+    model, scaler = train_model(all_data, params)
+
+
+if __name__ == "__main__":
+    main()

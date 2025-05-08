@@ -1,0 +1,4 @@
+params:
+  sequence_length : 60
+  batch_size : 10
+  epochs : 30
