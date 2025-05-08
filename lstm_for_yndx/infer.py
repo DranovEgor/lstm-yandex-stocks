@@ -4,8 +4,8 @@ from predict import plot_predictions, predict_future
 
 
 def inference(data):
-    model = torch.load("model_full.pt", weights_only=False)
-    scaler = torch.load("scaler.pt", weights_only=False)
+    model = torch.load("../models/model_full.pt", weights_only=False)
+    scaler = torch.load("../models/scaler.pt", weights_only=False)
     model.eval()
     with torch.no_grad():
         last_sequence = data.values[-60:]
