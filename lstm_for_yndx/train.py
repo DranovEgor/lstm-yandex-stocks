@@ -1,8 +1,14 @@
 import pytorch_lightning as pl
 import torch
 from data import prepare_data, start_prepare
+from dvc.api import DVCFileSystem
 from model import StockLSTM
 from torch.utils.data import DataLoader
+
+
+def load_data():
+    fs = DVCFileSystem()
+    fs.get("../YDEX.csv", "../YDEX.csv")
 
 
 def train_model(stock_data):
@@ -32,5 +38,6 @@ def train_model(stock_data):
 
 
 if __name__ == "__main__":
+    load_data()
     all_data = start_prepare()
     model, scaler = train_model(all_data)
