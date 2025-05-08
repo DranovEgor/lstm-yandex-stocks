@@ -1,0 +1,5 @@
+outs:
+- md5: 5ecadf373a71bc815bebeac93526d48b
+  size: 34225
+  hash: md5
+  path: YDEX.csv
