@@ -1,3 +1,4 @@
+import dvc.api
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
@@ -5,8 +6,14 @@ from sklearn.preprocessing import MinMaxScaler
 from torch.utils.data import Dataset
 
 
+def load_data():
+    with dvc.api.open("../YDEX.csv", mode="rb") as f:
+        data = pd.read_csv(f)
+    return data
+
+
 def start_prepare():
-    data = pd.read_csv("../YDEX.csv")
+    data = load_data()
     data = data["Цена"]
     data = data.apply(lambda x: x[:-2])
     all_data = data.astype(float)

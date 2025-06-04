@@ -1,4 +1,2 @@
-[core]
-    remote = local_storage
 ['remote "local_storage"']
-    url = /Users/egordranovmacbook/Desktop/main/Programms/MIPT/MLOps_MIPT/mlops_storage
+    url = ../downloaded_content

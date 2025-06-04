@@ -2,15 +2,9 @@ import hydra
 import pytorch_lightning as pl
 import torch
 from data import prepare_data, start_prepare
-from dvc.api import DVCFileSystem
 from model import StockLSTM
 from omegaconf import OmegaConf
 from torch.utils.data import DataLoader
-
-
-def load_data():
-    fs = DVCFileSystem()
-    fs.get("../YDEX.csv", "../YDEX.csv")
 
 
 def train_model(stock_data, cfg):
@@ -41,7 +35,6 @@ def train_model(stock_data, cfg):
 
 @hydra.main(version_base=None, config_path="../configs", config_name="config")
 def main(cfg):
-    load_data()
     all_data = start_prepare()
     params = OmegaConf.to_container(cfg["params"])
     model, scaler = train_model(all_data, params)
