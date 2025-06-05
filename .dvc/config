@@ -1,2 +1,2 @@
 ['remote "local_storage"']
-    url = ../downloaded_content
+    url = ../lstm_for_yndx/downloaded_content
