@@ -33,7 +33,7 @@ Dataset Characteristics:
 ```bash
 # 1. Clone repository
 git clone https://github.com/DranovEgor/lstm-yandex-stocks
-cd lstm-yandex-stocks
+cd lstm_for_yndx
 
 # 2. Install dependencies
 poetry install
@@ -41,9 +41,6 @@ poetry install
 # 3. Activate virtual environment
 poetry shell
 
-# 4. Download data
-python download_data.py
-```
 
 ## 🚀 Training Pipeline
 
