@@ -7,7 +7,8 @@ from torch.utils.data import Dataset
 
 
 def load_data():
-    with dvc.api.open("../YDEX.csv", mode="rb") as f:
+    path = "downloaded_content/md5/5e/cadf373a71bc815bebeac93526d48b"
+    with dvc.api.open(path, mode="rb") as f:
         data = pd.read_csv(f)
     return data
 
