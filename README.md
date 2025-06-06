@@ -1,49 +1,53 @@
-# LSTM for Yandex stock price
+# 📈 LSTM for Yandex Stock Price Prediction
 
-## Overview
+## 📌 Project Overview
 
-The project is dedicated to predicting the stock price using the LSTM model. The task is to predict the price for the next 10 days, where only the past price is used as a training sample. As an example, the price of Yandex shares traded on MOEX in the period from March 2023 to March 2025 is considered.
+This project implements an LSTM neural network to predict Yandex (MOEX: YNDX) stock prices for the next 10 days using historical price data. The model is trained on data from March 2023 to March 2025.
 
-[Data](https://ru.investing.com/equities/yandex-historical-data?ysclid=m81ihsakju683720297)
+🔹 **Key Features**:
+- 10-day ahead stock price forecasting
+- LSTM architecture optimized for time-series data
+- Complete training pipeline with DVC integration
+- MLflow logging for experiment tracking
+- Visualization of predictions
 
-## Setup
+## 📊 Dataset
 
-### Requrements
+[Yandex Historical Data](https://ru.investing.com/equities/yandex-historical-data?ysclid=m81ihsakju683720297)
 
-- Python
-- Poetry
-- PyTorch Lightning
-- DVC
+Dataset Characteristics:
+- Time period: March 2023 - March 2025
+- Features: Historical OHLC (Open-High-Low-Close) prices
+- Frequency: Daily
+
+## 🛠️ Setup
+
+### Prerequisites
+
+- Python 3.8+
+- Poetry (for dependency management)
+- DVC (for data versioning)
 
 ### Installation
 
-1. Download repository
-
-```sh
+```bash
+# 1. Clone repository
 git clone https://github.com/DranovEgor/lstm-yandex-stocks
-```
+cd lstm-yandex-stocks
 
-2. Install dependencies with Poetry:
-
-```sh
+# 2. Install dependencies
 poetry install
-```
 
-3. Activate virtual enviroment:
-
-```sh
+# 3. Activate virtual environment
 poetry shell
+
+# 4. Download data
+python download_data.py
 ```
 
-4. All executable files are located in lstm_for_yndx.py.
+## 🚀 Training Pipeline
 
-```sh
-cd lstm_for_yndx
-```
-
-## Train
-
-### 1. Data loading
+### 1. Data Loading
 
 In order to download data using DVC, need to run the download_data.py.
 
@@ -51,7 +55,7 @@ In order to download data using DVC, need to run the download_data.py.
 python3 download_data.py
 ```
 
-### 2. Train the model
+### 2. Model Training
 
 Running train process.
 
