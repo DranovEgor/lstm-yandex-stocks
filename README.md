@@ -64,5 +64,15 @@ python3 train.py
 Predict prices for the next 10 days.
 
 ```sh
-python3 train.py
+python3 infer.py
 ```
+
+
+## Interpretation
+
+To view the result, go to the predictions folder. Plots and a CSV-file with values for the next 10 days are presented.
+
+
+## Logging
+
+The plots folder contains the loss values ​​during the training process, obtained using MLflow.
