@@ -40,7 +40,7 @@ poetry install
 
 # 3. Activate virtual environment
 poetry shell
-
+```
 
 ## 🚀 Training Pipeline
 
