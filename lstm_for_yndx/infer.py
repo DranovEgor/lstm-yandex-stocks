@@ -1,3 +1,4 @@
+import pandas as pd
 import torch
 from data import start_prepare
 from predict import plot_predictions, predict_future
@@ -20,10 +21,15 @@ def inference(data):
 
     last_sequence = all_data[-sequence_length:]
     predicted_prices = predict_future(model, scaler, last_sequence, days_to_predict)
+    predictions_df = pd.DataFrame(
+        {
+            "Day": [f"Day {i}" for i in range(1, days_to_predict + 1)],
+            "Predicted_Price": [price for price in predicted_prices],
+        }
+    )
+    predictions_df.to_csv("../predictions/price_predictions.csv", index=False)
     plot_predictions(all_data, predicted_prices, sequence_length)
-    print("Predicted prices for next", days_to_predict, "days:")
-    for i, price in enumerate(predicted_prices, 1):
-        print(f"Day {i}: {price:.2f}")
+    print("Предсказания успешно сохранены в price_predictions.csv")
 
 
 if __name__ == "__main__":

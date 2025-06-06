@@ -56,4 +56,4 @@ def plot_predictions(actual_prices, predicted_prices, sequence_length):
     plt.ylabel("Price")
     plt.legend()
     plt.grid()
-    plt.savefig("../plot/price_prediction.png")
+    plt.savefig("../predictions/price_prediction.png")

@@ -24,6 +24,9 @@ class StockLSTM(pl.LightningModule):
         self.linear = nn.Linear(hidden_size, output_size)
         self.criterion = nn.MSELoss()
 
+        self.train_losses = []
+        self.val_losses = []
+
     def forward(self, x):
         lstm_out, _ = self.lstm(x)
         predictions = self.linear(lstm_out[:, -1, :])
@@ -33,14 +36,27 @@ class StockLSTM(pl.LightningModule):
         x, y = batch
         y_hat = self(x)
         loss = self.criterion(y_hat, y)
-        self.log("train_loss", loss, prog_bar=True)
+        self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True)
+
+        if self.training and batch_idx == 0:
+            if not hasattr(self, "epoch_train_losses"):
+                self.epoch_train_losses = []
+            self.epoch_train_losses.append(loss.item())
+
         return loss
 
     def validation_step(self, batch, batch_idx):
         x, y = batch
         y_hat = self(x)
         loss = self.criterion(y_hat, y)
-        self.log("val_loss", loss, prog_bar=True)
+
+        self.log("val_loss", loss, on_step=False, on_epoch=True, prog_bar=True)
+
+        if not self.training and batch_idx == 0:
+            if not hasattr(self, "epoch_val_losses"):
+                self.epoch_val_losses = []
+            self.epoch_val_losses.append(loss.item())
+
         return loss
 
     def configure_optimizers(self):

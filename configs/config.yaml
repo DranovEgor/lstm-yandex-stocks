@@ -1,4 +1,17 @@
+defaults:
+  - _self_
+
 params:
-  sequence_length : 60
-  batch_size : 10
-  epochs : 30
+
+  sequence_length: 60
+  batch_size: 10
+  epochs: 30
+
+  input_size: 1
+  hidden_size: 50
+  num_layers: 1
+  output_size: 1
+  learning_rate: 0.001
+
+  mlflow_uri: "http://127.0.0.1:8080"
+  experiment_name: "stock_prediction"
