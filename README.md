@@ -77,12 +77,14 @@ python3 infer.py
 
 ## 📊 Sample Results
 
-To view the result, go to the predictions folder. Plots and a CSV-file with values for the next 10 days are presented.
+Prediction outputs are saved in `/predictions` directory:
+- 📊 `*.png`: Prediction visualization plots
+- 📄 `*.csv`: Forecasted values for next 10 days
 
 
 ## 📝 Logging
 
-The plots folder contains the loss values ​​during the training process, obtained using MLflow.
+All training metrics are automatically logged using MLflow. The results are organized in plots.
 
 
 ## 📧 Contact
