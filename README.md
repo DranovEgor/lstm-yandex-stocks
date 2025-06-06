@@ -52,6 +52,7 @@ python download_data.py
 In order to download data using DVC, need to run the download_data.py.
 
 ```sh
+# Download and preprocess data
 python3 download_data.py
 ```
 
@@ -60,23 +61,30 @@ python3 download_data.py
 Running train process.
 
 ```sh
+# Training
 python3 train.py
 ```
 
-## Infer
+## 🔮 Inference
 
-Predict prices for the next 10 days.
+
 
 ```sh
+# Generate 10-day predictions
 python3 infer.py
 ```
 
 
-## Interpretation
+## 📊 Sample Results
 
 To view the result, go to the predictions folder. Plots and a CSV-file with values for the next 10 days are presented.
 
 
-## Logging
+## 📝 Logging
 
 The plots folder contains the loss values ​​during the training process, obtained using MLflow.
+
+
+## 📧 Contact
+
+- GitHub: [DranovEgor](https://github.com/DranovEgor)
