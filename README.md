@@ -27,6 +27,9 @@ Dataset Characteristics:
 - Python 3.8+
 - Poetry (for dependency management)
 - DVC (for data versioning)
+- Hydra (config management)
+- MLFlow
+- PyTorch Lightning
 
 ### Installation
 
