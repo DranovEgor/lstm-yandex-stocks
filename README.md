@@ -43,6 +43,9 @@ poetry shell
 
 # 3. Install dependencies
 poetry install
+
+# 4. Launching pre-commit hooks
+pre-commit run -a
 ```
 
 ## 🚀 Training Pipeline
