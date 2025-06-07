@@ -63,7 +63,7 @@ poetry run python3 download_data.py
 poetry run mlflow server --host 127.0.0.1 --port 8080
 ```
 
-Running train process. If you're unable to load the MLflow tracking server, you can bypass this step and proceed directly to model inference using pre-trained models.
+Running train process. If you're unable to load the MLflow tracking server, you can bypass this step and proceed directly to model inference using pre-trained models. Running MLFlow may take some time.
 
 ```sh
 # Training
