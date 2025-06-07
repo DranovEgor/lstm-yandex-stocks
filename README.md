@@ -59,7 +59,7 @@ poetry run python3 download_data.py
 ### 2. Model Training
 
 ```sh
-# MLFlow server run
+# MLFlow server run(it's recommended to run this command from another terminalin the same directory)
 poetry run mlflow server --host 127.0.0.1 --port 8080
 ```
 
