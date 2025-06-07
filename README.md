@@ -38,11 +38,11 @@ Dataset Characteristics:
 git clone https://github.com/DranovEgor/lstm-yandex-stocks
 cd lstm-yandex-stocks/lstm_for_yndx
 
-# 2. Install dependencies
-poetry install
-
-# 3. Activate virtual environment
+# 2. Activate virtual environment
 poetry shell
+
+# 3. Install dependencies
+poetry install
 ```
 
 ## 🚀 Training Pipeline
@@ -53,16 +53,21 @@ In order to download data using DVC, need to run the download_data.py.
 
 ```sh
 # Download and preprocess data
-python3 download_data.py
+poetry run python3 download_data.py
 ```
 
 ### 2. Model Training
+
+```sh
+# MLFlow server run
+poetry run mlflow server --host 127.0.0.1 --port 8080
+```
 
 Running train process. If you're unable to load the MLflow tracking server, you can bypass this step and proceed directly to model inference using pre-trained models.
 
 ```sh
 # Training
-python3 train.py
+poetry run python3 train.py
 ```
 
 ## 🔮 Inference
@@ -71,7 +76,7 @@ python3 train.py
 
 ```sh
 # Generate 10-day predictions
-python3 infer.py
+poetry run python3 infer.py
 ```
 
 
