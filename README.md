@@ -58,7 +58,7 @@ python3 download_data.py
 
 ### 2. Model Training
 
-Running train process.
+Running train process. If you're unable to load the MLflow tracking server, you can bypass this step and proceed directly to model inference using pre-trained models.
 
 ```sh
 # Training
